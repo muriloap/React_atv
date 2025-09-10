@@ -1,9 +1,14 @@
+* {
+    background-color: black;
+}
+
 h1{
     text-align: center;
-    border: 2px solid gray;
+    border: 2px solid #f00;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+    background-color: rgb(19, 17, 17);
+    margin: 10px;
 }
 
 
@@ -11,14 +16,14 @@ li.produto{
  
     display: flex;
     flex-direction: column;
-    border: 2px solid gray;
+    border: 2px solid #f00;
     padding-top: 20px;
     align-items: center;
     flex-grow: 5;
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px;
-    
+    background-color: rgb(19, 17, 17);
 }
 
 ul{
@@ -28,5 +33,4 @@ ul{
     padding: 20px;
     flex-wrap: wrap;
     align-content: space-around;
-    
 }

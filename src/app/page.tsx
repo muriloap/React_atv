@@ -6,7 +6,6 @@ import Produto from "@/models/Produto";
 import produtos from "@/mocks/produtos";
 import ProductList from "@/components/ProductList";
 import Header from "@/components/Header";
-import Menu from "@/components/Menu";
 
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
     return (
     <>
     <Header/>
-    <Menu/>
     <h1>Produtos</h1>
     <ProductList produtos={produtos} />
     </>
