@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    border: 2px solid gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+
+li.produto{
+ 
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    padding-top: 20px;
+    align-items: center;
+    flex-grow: 5;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    
+}
+
+ul{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    
+}
