@@ -1,0 +1,18 @@
+.nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.link {
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.link:hover {
+    background-color: rgb(59, 59, 59);
+    transform: translateY(1.05);
+    transform: scale(1.05);
+}
