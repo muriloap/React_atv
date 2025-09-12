@@ -1,0 +1,10 @@
+.root {
+    display: flex;
+    justify-content: center;
+}
+
+.root label {
+    display: flex;
+    flex-direction: column;
+}
+

@@ -1,0 +1,11 @@
+.div {
+    background-color: rgb(18, 18, 145);
+    text-align: center;
+    justify-content: center;    
+}
+
+.button {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
