@@ -1,20 +1,30 @@
-'use client';
-import { ChangeEvent, useState } from 'react';
 import styles from './styles.module.css'
+import { ChangeEvent, useState } from 'react';
 
 type Props = {
     label: string;
     type: "text" | "email";
     multiline?: boolean;
-    onChange?(): void;
+    onChange?(texto: string): void;
+    text?: string;
 }
 
 export default function Textfield(props: Props) {
 
-    const [texto, setTexto] = useState("");
+    const [texto, setTexto] = useState(props.text);
     
-    function handleChange(e: ChangeEvent<HTMLInputElement>) {
-        setTexto(e.target.value)
+    function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+    setTexto(e.target.value)
+        if (props.onChange){
+        props.onChange(e.target.value);
+        }
+    }
+
+    function handleTextAreaChange(e: ChangeEvent<HTMLInputElement>) {
+    setTexto(e.target.value)
+        if (props.onChange){
+        props.onChange(e.target.value);
+        }
     }
 
     return (
@@ -22,11 +32,15 @@ export default function Textfield(props: Props) {
         <label>
         {props.label}: 
         {(props.multiline) ? (
-            <textarea/>
+            <textarea className={styles.textarea}/>
         ) : (
-            <input onChange={handleChange} type={props.type} placeholder={props.label} />
+            <input 
+            className={styles.input}
+            onChange={handleInputChange} 
+            type={props.type} 
+            placeholder={props.label}
+            value={texto}/>
         )}
-        {texto}
         </label>
         </div>
     );

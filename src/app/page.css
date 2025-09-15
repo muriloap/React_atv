@@ -22,6 +22,7 @@ li.produto{
     justify-content: center;
     margin: 10px;
     background-color: rgb(19, 17, 17);
+    border-radius: 15px;
 }
 
 ul{
