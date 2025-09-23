@@ -11,7 +11,7 @@ type Props = {
             <ProductCard 
             key={produto.id}
             nome={produto.nome}
-            foto={produto.foto}
+            foto={produto.fotoUrl}
             preco={produto.preco}/>
         )
     }

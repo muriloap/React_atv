@@ -3,7 +3,7 @@ import { ChangeEvent, useState } from 'react';
 
 type Props = {
     label: string;
-    type: "text" | "email";
+    type: "text" | "email" | "file";
     multiline?: boolean;
     onChange?(texto: string): void;
     text?: string;

@@ -1,7 +1,7 @@
 type Produto = {
     id: number;
     nome: string;
-    foto: string;
+    fotoUrl: string;
     preco: number;
 }
 

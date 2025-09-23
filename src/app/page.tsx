@@ -7,27 +7,43 @@ import produtos from "@/mocks/produtos";
 import ProductList from "@/components/ProductList";
 import Header from "../components/Header";
 import axios, { AxiosResponse } from 'axios';
+import { useEffect, useState } from "react";
+import Loading from "@/components/Loading";
+import CadastroProduto from "@/components/CadastroProduto";
 
 export default function Home() {
 
-    function sucesso(response: AxiosResponse) {
-        alert(response.data[0].nome);
+    const [produtos, setProdutos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    function sucesso(res: AxiosResponse) {
+        setProdutos(res.data);
     }
 
     function falha() {
-        alert();
+        alert("FALHOU");
     }
 
-    axios.get("http://10.60.46.55:4000/api/produtos")
-    .then(sucesso)
-    .catch(falha)
-    .finally()
+    function todoCaso() {
+        setIsLoading(false);
+    }
 
+    function loadProdutos() {
+        setIsLoading(true);
+        axios.get("https://produtos-server.onrender.com/api/produtos")
+        .then(sucesso)
+        .catch(falha)
+        .finally(todoCaso)     
+    }
+
+    useEffect(loadProdutos, []);
 
     return (
     <>
     <h1>Produtos</h1>
+    {(isLoading) && <Loading />}
     <ProductList produtos={produtos} />
+    <CadastroProduto/>
     </>
     )
 }
