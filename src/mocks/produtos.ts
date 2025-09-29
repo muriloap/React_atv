@@ -4,13 +4,13 @@ const produtos: Produto[] = [
     {
         id: 1,
         nome: "Mouse USB",
-        foto: "/images/mouse.jpg",
+        fotoUrl: "/images/mouse.jpg",
         preco:100,
     },
     {
         id: 2,
         nome: "Teclado Kurama",
-        foto: "/images/teclado.jpg",
+        fotoUrl: "/images/teclado.jpg",
         preco: 200,
 
     }

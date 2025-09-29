@@ -11,8 +11,7 @@ type Props = {
     onEnviadoFalha(): void;
 }
 
-export default function CadastroProduto(props: Props){
-    
+export default function Deletar(props:Props){
     const [nome, setNome] = useState('');
     const [fotoUrl, setFotoUrl] = useState('');
     const [preco, setPreco] = useState('');
@@ -22,37 +21,21 @@ export default function CadastroProduto(props: Props){
     }
     function falha(_error: AxiosError) {}
 
-    function Cadastrar() {
-        // try {
+    function Del() {
             props.onEnviando();
-            console.log('enviar-inicio');
             const produto: Produto = {
                 nome, fotoUrl, preco: Number(preco),
                 id: 0
             };
-
-            const headers = { 'Content-Type': 'application/json' };
-            axios.post( "https://produtos-server.onrender.com/api/produtos", produto, {headers})
+            const config = {
+                headers: { 'Content-Type': 'application/json' },
+                data: produto 
+              };
+            axios.delete( "https://produtos-server.onrender.com/api/produtos", config)
             .then(sucesso)
-            .catch(falha);
-
-        //     const response = axios.post( "https://produtos-server.onrender.com/api/produtos",
-        //         {    
-        //             nome,
-        //             fotoUrl,
-        //             preco: Number(preco), 
-                  
-        //         },
-        //         {
-        //           headers: { 'Content-Type': 'application/json' }
-        //         }
-        //       );
-        //       console.log('enviar-fim');
-        //       alert("Enviado com Sucesso")
-
-        //   } catch (error) {
-        //     alert("Erro ao enviar:");
-        //   }
+            .catch(falha)
+    
+            alert("Deletado com Sucesso")
     }
     
     return(
@@ -60,9 +43,8 @@ export default function CadastroProduto(props: Props){
             <Textfield label="Nome" type="text" onChange={setNome}/>
             <Textfield label="FotoUrl" type="text" onChange={setFotoUrl}/>
             <Textfield label="Preço" type="text" onChange={setPreco}/>
-            <button className={styles.button} type="button" onClick={Cadastrar}>Cadastrar</button>
+            <button className={styles.button} type="button" onClick={Del}>Deletar</button>
         </form>
     
     )
 }
-    

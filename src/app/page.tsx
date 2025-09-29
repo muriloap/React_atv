@@ -10,6 +10,7 @@ import axios, { AxiosResponse } from 'axios';
 import { useEffect, useState } from "react";
 import Loading from "@/components/Loading";
 import CadastroProduto from "@/components/CadastroProduto";
+import Deletar from "@/components/Deletar";
 
 export default function Home() {
 
@@ -43,7 +44,8 @@ export default function Home() {
     <h1>Produtos</h1>
     {(isLoading) && <Loading />}
     <ProductList produtos={produtos} />
-    <CadastroProduto/>
+    <CadastroProduto onEnviando={() => {}} onEnviadoSucesso={() => {}} onEnviadoFalha={ () => {}}/>
+        <Deletar onEnviando={() => {}} onEnviadoSucesso={() => {}} onEnviadoFalha={ () => {}}/>
     </>
     )
 }
